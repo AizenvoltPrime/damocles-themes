@@ -54,6 +54,12 @@ To submit a theme, see [CONTRIBUTING.md](CONTRIBUTING.md). To ask for a theme to
   set it to that release tag then. Until the validator is on the ref it names, validation and publishing of submissions fail.
 - The sign job pushes `community.signed.json` and `thumbs/` with the workflow's token. Branch protection that requires pull
   requests on `main` would refuse that push.
+- Damocles ships two public keys: the current one (keyId `187953e23cec5c03`, private half in `STORE_SIGNING_KEY`) and a
+  next one (keyId `822af0c838fe5f14`, private half kept offline by the owner, never in GitHub). If the current key leaks:
+  1. Put the next key's private PEM in `STORE_SIGNING_KEY`, set `EXPECTED_KEY_ID` in `scripts/sign.mjs` to its keyId, and
+     run "Publish the store list" with `resign-only`. Every app that ships both keys accepts the list at once.
+  2. Release Damocles with the leaked key removed from `src/core/themes/store-keys.ts`, the next key as `current`, and a new
+     offline key as `next`.
 
 ## License
 
