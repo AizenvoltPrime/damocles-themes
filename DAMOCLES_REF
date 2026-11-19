@@ -1,0 +1,2 @@
+# Must become the first Damocles release tag that contains the theme validator (npm run build:theme-validator).
+main

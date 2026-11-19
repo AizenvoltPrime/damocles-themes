@@ -1,0 +1,24 @@
+name: Takedown
+description: A listed theme uses your work without permission, or breaks the content rule.
+title: "Takedown: "
+labels: ["takedown"]
+body:
+  - type: input
+    id: theme
+    attributes:
+      label: Theme id
+      description: The id of the listed theme, as in themes/<id>.json.
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: What it uses
+      description: The image, sprite, font or other work, and how you hold the rights to it.
+    validations:
+      required: true
+  - type: textarea
+    id: contact
+    attributes:
+      label: How to reach you
+      description: Optional, if the maintainers need more than this issue.
