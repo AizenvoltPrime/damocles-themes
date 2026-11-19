@@ -30,7 +30,9 @@ own repository; this repository only lists it, pinned by its SHA-256.
 5. Open a pull request. CI downloads the file, checks its SHA-256, and runs the Damocles theme validator on it: the format,
    the archive limits, the custom CSS sanitizer, the license declarations, every asset's hash, and a flash check of every
    moving wallpaper and sprite. A theme with flashing over the WCAG 2.3.1 thresholds (more than 3 flashes in any second) is
-   refused. CI uploads the 320 px wallpaper thumbnails it made as an artifact, so you can see what the store will show.
+   refused. The validator runs the app's own theme renderer under the Electron of the Damocles version `DAMOCLES_REF` names,
+   so it decodes every video wallpaper the app plays (H.264, VP8, VP9 and AV1) the same way. CI uploads the 320 px
+   wallpaper thumbnails it made as an artifact, so you can see what the store will show.
 6. A maintainer reviews the theme and the pull request. After the merge, CI builds the entry (colors, fonts, thumbnails)
    and signs the list; apps see it on their next fetch.
 
@@ -52,5 +54,18 @@ Maintainers may decline any submission, and may remove a listed theme at any tim
 ## Takedown
 
 If a listed theme uses your work without permission, or breaks the content rule, open a Takedown issue in this repository
-(Issues › New issue › Takedown), naming the theme's `id` and what it uses. The form labels it `takedown`. A removed theme is listed under `removed` with a reason; apps
-that have it installed switch away from it, mark it as removed from the store, and offer to delete it.
+(Issues › New issue › Takedown), naming the theme's `id` and what it uses. The form labels it `takedown`. A removed theme is
+listed under `removed` with a reason; apps that have it installed switch away from it, mark it as removed from the store, and
+offer to delete it.
+
+You can also go to GitHub, which hosts this repository and the theme files:
+
+- Copyright: GitHub's [Copyright claims form](https://github.com/contact/dmca), after its
+  [guide to submitting a DMCA takedown notice](https://docs.github.com/en/site-policy/content-removal-policies/guide-to-submitting-a-dmca-takedown-notice).
+  Without a GitHub account, send the notice by email to `copyright@github.com`, which that guide names.
+- Trademark: GitHub's [trademark policy violation report](https://support.github.com/contact/trademark-policy), after its
+  [trademark policy](https://docs.github.com/en/site-policy/content-removal-policies/github-trademark-policy). GitHub's
+  support site asks you to sign in before it shows this form.
+
+A notice to GitHub names the repository that holds the file: the theme's release repository (its `url` in
+`themes/<id>.json`), this repository, or both.

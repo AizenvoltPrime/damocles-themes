@@ -1,0 +1,7 @@
+contact_links:
+  - name: Copyright claim to GitHub (DMCA)
+    url: https://github.com/contact/dmca
+    about: GitHub's own copyright claims form. Without a GitHub account, email the notice to copyright@github.com, as GitHub's guide says.
+  - name: Trademark report to GitHub
+    url: https://support.github.com/contact/trademark-policy
+    about: GitHub's own trademark policy violation report; GitHub's support site asks you to sign in first.

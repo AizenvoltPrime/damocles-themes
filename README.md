@@ -14,7 +14,10 @@ install card as a theme file or link.
 - `removed` takes a theme out of the store. An app that has it installed switches its looks back to the built-in theme,
   marks it "Removed from the store" with the reason, and offers Delete. Nothing is deleted on its own.
 - The app fetches the list when you open Browse or press Check for updates, and, while you have a store theme installed,
-  beside its own update check under "Check for updates automatically". The setting "Community store" turns all of it off.
+  beside its own update check: the automatic checks under "Check for updates automatically", and Help › Check for Updates…
+  or About's check when you choose them. The setting "Community store" turns all of it off.
+- CI validates each theme with the app's own theme renderer, under the Electron of the Damocles version `DAMOCLES_REF`
+  names, so the store accepts exactly the wallpapers the app plays.
 
 ## Contents
 
@@ -30,9 +33,10 @@ install card as a theme file or link.
 | `.github/workflows/validate.yml` | Pull requests: validates the changed submissions, with no secret and read-only access |
 | `.github/workflows/publish.yml` | Pushes to `main` build, then sign; the 1st and 15th and a `resign-only` run re-sign the committed list; all behind `store-signing` |
 | `.github/ISSUE_TEMPLATE/takedown.yml` | The Takedown issue form, which labels the issue `takedown` |
+| `.github/ISSUE_TEMPLATE/config.yml` | Links beside it to GitHub's own copyright and trademark reports |
 
 To submit a theme, see [CONTRIBUTING.md](CONTRIBUTING.md). To ask for a theme to be taken down, open a Takedown issue
-(Issues › New issue › Takedown).
+(Issues › New issue › Takedown), or report it to GitHub as [CONTRIBUTING.md](CONTRIBUTING.md#takedown) describes.
 
 ## Maintainers
 
